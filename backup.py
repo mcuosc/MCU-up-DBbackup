@@ -6,7 +6,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 MONGO_SRV = os.getenv('MONGO_SRV')
-DB_PORT = os.getenv('DB_PORT')
 DB_NAME = os.getenv('DB_NAME')
 COLLECTION = os.getenv('COLLECTION')
 
@@ -17,8 +16,7 @@ collection = db[COLLECTION].find()
 data = list(collection)
 for i in range(len(data)):
     data[i]['_id'] = re.findall("'(.*)'", data[i].get('_id').__repr__())[0]
-# print(data[0])
 with open('data.json','w') as f:
     json.dump(data, f)
-print(200)
+print("Success")
 client.close()
