@@ -2,7 +2,12 @@
 
 事前準備
 ---
-```shell
+1.
+```
+git clone https://github.com/mcuosc/MCU-up-DBbackup.git
+```
+1.
+```
 pip install -r requirments.txt
 ```
 
