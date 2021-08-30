@@ -6,7 +6,7 @@
 ```
 git clone https://github.com/mcuosc/MCU-up-DBbackup.git
 ```
-1.
+2.
 ```
 pip install -r requirments.txt
 ```
