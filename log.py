@@ -1,8 +1,11 @@
 import logging as log
 import time
+import os
 
 class Logger():
     def __init__(self):
+        if not os.path.exists("Log/"):
+            os.makedirs("Log/")
         self.logPath = r"Log/"
         self.logName = time.strftime("log_%Y%m%d_%H%M.txt")
         self.logFile = self.logPath + self.logName
@@ -16,5 +19,5 @@ class Logger():
         log.info(content)
 
     def Error(self,content):
-        log.error(content,)
+        log.error(content,exc_info=True)
 

@@ -23,11 +23,13 @@ def backup():
             data[i]['createdAt'] = re.findall("'(.*)'", data[i].get('_id').__repr__())[0]
             data[i]['modifiedAt'] = re.findall("'(.*)'", data[i].get('_id').__repr__())[0]
         filename = COLLECTION+time.strftime("_%Y%m%d_%H%M.json")
+        if not os.path.exists("Data/"):
+            os.makedirs("Data/")
         with open("Data/"+filename,'w') as f:
             json.dump(data, f)
-        client.close()
-        Log.Info("Data is already save on "+time.strftime("%Y/%m/%d %H:%M:%S"))
+        Log.Info("Data is already save in "+filename+" on "+time.strftime("%Y/%m/%d %H:%M:%S"))
         return True
+        client.close()
     except:
-        Log.Error("")
+        Log.Error("Something went wrong")
         return False

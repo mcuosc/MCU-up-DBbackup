@@ -9,5 +9,6 @@ def main():
             time.sleep(3600)
         else:
             print("An error occurred")
+            time.sleep(10)
 
 main()
