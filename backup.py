@@ -23,11 +23,11 @@ def backup():
             data[i]['createdAt'] = re.findall("'(.*)'", data[i].get('_id').__repr__())[0]
             data[i]['modifiedAt'] = re.findall("'(.*)'", data[i].get('_id').__repr__())[0]
         filename = COLLECTION+time.strftime("_%Y%m%d_%H%M.json")
-        if not os.path.exists("Data/"):
-            os.makedirs("Data/")
-        with open("Data/"+filename,'w') as f:
+        if not os.path.exists("Data"+os.sep):
+            os.makedirs("Data"+os.sep)
+        with open("Data"+os.sep+filename,'w') as f:
             json.dump(data, f)
-        Log.Info("Data is already save in "+filename+" on "+time.strftime("%Y/%m/%d %H:%M:%S"))
+        Log.Info("Data is already save in "+filename)
         return True
         client.close()
     except:

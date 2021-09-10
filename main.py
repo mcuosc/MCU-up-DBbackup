@@ -1,12 +1,13 @@
 from backup import backup
 import time
-import logging as log
+from remove import removeOldFile
 
 def main():
     while(True):
         if backup():
             print("Data is already save on "+time.strftime("%Y/%m/%d %H:%M:%S"))
-            time.sleep(3600)
+            removeOldFile(5,'Data') # removeOldFile(Day,Path)
+            time.sleep(3600*3)
         else:
             print("An error occurred")
             time.sleep(10)
