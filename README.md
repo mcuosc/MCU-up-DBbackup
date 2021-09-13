@@ -14,6 +14,7 @@ pip install -r requirments.txt
 建立流程
 ---
 1. 建立`.env`檔，填入相應資訊
-3. 執行`main.py`
+2. 執行`docker -t backup .`
+3. 執行`docker run -d --name backup backup`
 
 
