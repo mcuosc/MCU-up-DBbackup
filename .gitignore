@@ -3,3 +3,4 @@ test.py
 *.json
 *.txt
 __pycache__
+!requirements.txt
