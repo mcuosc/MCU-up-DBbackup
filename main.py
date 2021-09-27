@@ -9,7 +9,7 @@ def main():
             removeOldFile(5,'Data') # removeOldFile(Day,Path)
             time.sleep(3600*3)
         else:
-            print("An error occurred")
+            print("An error occurred. Please to check log file.")
             time.sleep(10)
 
 main()
